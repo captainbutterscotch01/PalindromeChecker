@@ -1,25 +1,27 @@
-class PalindromeTwoPointer {
+import java.util.*;
+
+class PalindromeDeque {
 
     public static void main(String[] args) {
 
         // Original string
-        String str = "radar";
+        String str = "level";
 
-        // Convert to character array
-        char[] arr = str.toCharArray();
+        Deque<Character> deque = new LinkedList<>();
 
-        int start = 0;
-        int end = arr.length - 1;
+        // Insert characters into deque
+        for (int i = 0; i < str.length(); i++) {
+            deque.addLast(str.charAt(i));
+        }
+
         boolean isPalindrome = true;
 
-        // Two-pointer comparison
-        while (start < end) {
-            if (arr[start] != arr[end]) {
+        // Compare front and rear
+        while (deque.size() > 1) {
+            if (deque.removeFirst() != deque.removeLast()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
         // Display result
