@@ -1,29 +1,32 @@
-class PalindromeTwoPointer {
+class PalindromeChecker {
 
-    public static void main(String[] args) {
-
-        // Original string
-        String str = "radar";
-
-        // Convert to character array
-        char[] arr = str.toCharArray();
+    // Method to check palindrome (encapsulated logic)
+    public boolean checkPalindrome(String str) {
 
         int start = 0;
-        int end = arr.length - 1;
-        boolean isPalindrome = true;
+        int end = str.length() - 1;
 
-        // Two-pointer comparison
         while (start < end) {
-            if (arr[start] != arr[end]) {
-                isPalindrome = false;
-                break;
+            if (str.charAt(start) != str.charAt(end)) {
+                return false;
             }
             start++;
             end--;
         }
 
-        // Display result
-        if (isPalindrome) {
+        return true;
+    }
+}
+
+class MainApp {
+
+    public static void main(String[] args) {
+
+        PalindromeChecker checker = new PalindromeChecker();
+
+        String str = "level";
+
+        if (checker.checkPalindrome(str)) {
             System.out.println("Palindrome");
         } else {
             System.out.println("Not Palindrome");
