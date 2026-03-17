@@ -1,20 +1,19 @@
-class PalindromeTwoPointer {
+class PalindromeIgnoreCaseSpace {
 
     public static void main(String[] args) {
 
-        // Original string
-        String str = "radar";
+        String str = "A man a plan a canal Panama";
 
-        // Convert to character array
-        char[] arr = str.toCharArray();
+        // Normalize string: remove spaces and convert to lowercase
+        str = str.replaceAll("\\s", "").toLowerCase();
 
         int start = 0;
-        int end = arr.length - 1;
+        int end = str.length() - 1;
         boolean isPalindrome = true;
 
-        // Two-pointer comparison
+        // Two-pointer check
         while (start < end) {
-            if (arr[start] != arr[end]) {
+            if (str.charAt(start) != str.charAt(end)) {
                 isPalindrome = false;
                 break;
             }
