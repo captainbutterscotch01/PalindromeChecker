@@ -1,9 +1,15 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+class PalindromeCheckerApp {
 
+    public static void main(String[] args) {
 
+        // Display welcome message
+        System.out.println("Welcome to Palindrome Checker App");
+
+        // Display application information
+        System.out.println("Application Name: Palindrome Checker");
+        System.out.println("Version: 1.0");
+
+        // End or continue to next part
+        System.out.println("Program ready...");
+    }
 }
