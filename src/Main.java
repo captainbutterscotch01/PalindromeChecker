@@ -1,25 +1,27 @@
-class PalindromeTwoPointer {
+import java.util.Stack;
+
+class PalindromeStack {
 
     public static void main(String[] args) {
 
         // Original string
-        String str = "radar";
+        String str = "madam";
 
-        // Convert to character array
-        char[] arr = str.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
-        int start = 0;
-        int end = arr.length - 1;
+        // Push all characters into stack
+        for (int i = 0; i < str.length(); i++) {
+            stack.push(str.charAt(i));
+        }
+
         boolean isPalindrome = true;
 
-        // Two-pointer comparison
-        while (start < end) {
-            if (arr[start] != arr[end]) {
+        // Pop and compare
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
         // Display result
