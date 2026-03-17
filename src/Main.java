@@ -1,9 +1,21 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+class PalindromeChecker {
 
+    public static void main(String[] args) {
 
+        // Hardcoded string
+        String str = "madam";
+        String reversed = "";
+
+        // Reverse the string
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed = reversed + str.charAt(i);
+        }
+
+        // Check palindrome
+        if (str.equals(reversed)) {
+            System.out.println(str + " is a Palindrome");
+        } else {
+            System.out.println(str + " is not a Palindrome");
+        }
+    }
 }
