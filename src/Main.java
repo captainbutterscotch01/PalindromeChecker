@@ -1,32 +1,30 @@
-class PalindromeTwoPointer {
+class PalindromeRecursion {
 
     public static void main(String[] args) {
 
-        // Original string
-        String str = "radar";
+        String str = "madam";
 
-        // Convert to character array
-        char[] arr = str.toCharArray();
-
-        int start = 0;
-        int end = arr.length - 1;
-        boolean isPalindrome = true;
-
-        // Two-pointer comparison
-        while (start < end) {
-            if (arr[start] != arr[end]) {
-                isPalindrome = false;
-                break;
-            }
-            start++;
-            end--;
-        }
-
-        // Display result
-        if (isPalindrome) {
+        if (isPalindrome(str, 0, str.length() - 1)) {
             System.out.println("Palindrome");
         } else {
             System.out.println("Not Palindrome");
         }
+    }
+
+    // Recursive function
+    static boolean isPalindrome(String str, int start, int end) {
+
+        // Base condition
+        if (start >= end) {
+            return true;
+        }
+
+        // Check mismatch
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+
+        // Recursive call
+        return isPalindrome(str, start + 1, end - 1);
     }
 }
