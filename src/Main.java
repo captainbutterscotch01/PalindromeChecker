@@ -1,25 +1,30 @@
-class PalindromeTwoPointer {
+import java.util.*;
+
+class StackVsQueuePalindrome {
 
     public static void main(String[] args) {
 
         // Original string
-        String str = "radar";
+        String str = "madam";
 
-        // Convert to character array
-        char[] arr = str.toCharArray();
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
 
-        int start = 0;
-        int end = arr.length - 1;
+        // Insert characters
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            queue.add(ch);   // Enqueue (FIFO)
+            stack.push(ch);  // Push (LIFO)
+        }
+
         boolean isPalindrome = true;
 
-        // Two-pointer comparison
-        while (start < end) {
-            if (arr[start] != arr[end]) {
+        // Compare dequeue vs pop
+        for (int i = 0; i < str.length(); i++) {
+            if (queue.remove() != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
         // Display result
